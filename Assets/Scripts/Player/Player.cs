@@ -30,6 +30,11 @@ namespace Player
 
         private void FixedUpdate()
         {
+            Movement();
+        }
+
+        private void Movement()
+        {
             var horizontalMovement = Input.GetAxisRaw("Horizontal");
             var verticallMovement = Input.GetAxisRaw("Vertical");
 
