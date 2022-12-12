@@ -9,23 +9,13 @@ namespace Player
         [SerializeField]
         float speed = 3.5f;
 
-        Rigidbody2D rigidbody;
-        BoxCollider2D collider;
+        Rigidbody2D rb;
+        BoxCollider2D boxCollider;
 
         private void Awake()
         {
-            rigidbody = gameObject.GetComponent<Rigidbody2D>();
-            collider = gameObject.GetComponent<BoxCollider2D>();
-        }
-
-        private void Start()
-        {
-            rigidbody.isKinematic = true;
-        }
-
-        private void Update()
-        {
-
+            rb = gameObject.GetComponent<Rigidbody2D>();
+            boxCollider = gameObject.GetComponent<BoxCollider2D>();
         }
 
         private void FixedUpdate()
@@ -41,7 +31,7 @@ namespace Player
             Vector2 movement = new Vector2(horizontalMovement * speed, verticallMovement * speed);
 
             movement *= Time.deltaTime * 100; //This makes movement smoother
-            rigidbody.velocity = movement;
+            rb.velocity = movement;
         }
     }
 

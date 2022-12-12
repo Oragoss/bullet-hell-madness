@@ -32,7 +32,7 @@ namespace Assets.Scripts.Player
             part.Emit(shots);
 
             var partShape = part.shape;
-            partShape.angle = (100 - gun.accuracy); //Prob don't need this
+            partShape.angle = (100 - gun.accuracy); 
 
             var partM = part.main;
             partM.startSpeed = speed;
