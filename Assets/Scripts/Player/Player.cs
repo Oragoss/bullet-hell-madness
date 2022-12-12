@@ -14,8 +14,8 @@ namespace Player
 
         private void Awake()
         {
-            rigidbody = gameObject.AddComponent<Rigidbody2D>();
-            collider = gameObject.AddComponent<BoxCollider2D>();
+            rigidbody = gameObject.GetComponent<Rigidbody2D>();
+            collider = gameObject.GetComponent<BoxCollider2D>();
         }
 
         private void Start()
