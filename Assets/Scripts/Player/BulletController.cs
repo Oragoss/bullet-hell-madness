@@ -20,12 +20,6 @@ namespace Assets.Scripts.Player
             part = GetComponent<ParticleSystem>();
         }
 
-        private void FixedUpdate()
-        {
-            var partM = part.main;
-            partM.startSpeed = speed;
-        }
-
         /// <summary>
         /// Instantiates the bullets
         /// </summary>
@@ -38,8 +32,8 @@ namespace Assets.Scripts.Player
             var partShape = part.shape;
             partShape.angle = (100 - gun.accuracy); //Prob don't need this
 
-            //var partM = part.main;
-            //partM.startSpeed = speed;
+            var partM = part.main;
+            partM.startSpeed = speed;
         }
 
 
