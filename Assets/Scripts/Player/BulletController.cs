@@ -8,22 +8,22 @@ namespace Assets.Scripts.Player
     {
         [Tooltip("Speed of the bullet.")]
         [SerializeField]
-        float speed;
+        float speed = 15;
 
-        [SerializeField]
-        GunController gun;
+        public GunController gun;
 
         private ParticleSystem part;
         private List<ParticleCollisionEvent> collisionEvents = new List<ParticleCollisionEvent>();
 
-        private void Awake()
+        private void Start()
         {
             part = GetComponent<ParticleSystem>();
         }
 
-        private void Start()
+        private void FixedUpdate()
         {
-            Fire(100);
+            var partM = part.main;
+            partM.startSpeed = speed;
         }
 
         /// <summary>
@@ -32,7 +32,23 @@ namespace Assets.Scripts.Player
         /// <param name="shots">How many bullets are fired off at once</param>
         public void Fire(int shots)
         {
+            gun.shotsFired++;
             part.Emit(shots);
+
+            var partShape = part.shape;
+            partShape.angle = (100 - gun.accuracy); //Prob don't need this
+
+            //var partM = part.main;
+            //partM.startSpeed = speed;
+        }
+
+
+        private void OnParticleCollision(GameObject other)
+        {
+            if (other.CompareTag("Enemy"))
+            {
+                Debug.Log("Hit: " + other.gameObject);
+            }
         }
     }
 }
