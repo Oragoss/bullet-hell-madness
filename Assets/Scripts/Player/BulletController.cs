@@ -18,6 +18,8 @@ namespace Assets.Scripts.Player
         private void Start()
         {
             part = GetComponent<ParticleSystem>();
+            var partShape = part.shape;
+            partShape.scale = new Vector3(0.1f, 1, 1);
         }
 
         /// <summary>
@@ -42,6 +44,7 @@ namespace Assets.Scripts.Player
             if (other.CompareTag("Enemy"))
             {
                 Debug.Log("Hit: " + other.gameObject);
+                Destroy(other.gameObject);
             }
         }
     }
