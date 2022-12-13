@@ -16,6 +16,7 @@ namespace Player
         {
             rb = gameObject.GetComponent<Rigidbody2D>();
             boxCollider = gameObject.GetComponent<BoxCollider2D>();
+            HideCursor();
         }
 
         private void FixedUpdate()
@@ -32,6 +33,18 @@ namespace Player
 
             movement *= Time.deltaTime * 100; //This makes movement smoother
             rb.velocity = movement;
+        }
+
+        private void HideCursor()
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
+        private void ShowCursoer()
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 

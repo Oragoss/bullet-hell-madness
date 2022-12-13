@@ -16,7 +16,6 @@ namespace Assets.Scripts.Player
 
         private void Start()
         {
-            //if (!bulletController) bulletController = GetComponentInChildren<BulletController>();
             if (!bulletController) bulletController = GetComponent<BulletController>();
             if (bulletController) bulletController.gun = this;
         }
