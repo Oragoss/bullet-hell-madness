@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4f9d77e83a686448ecdc0be8f9e706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnWaveDelay: 0
+  waveRepeatRate: 2.5
   wave:
   - {fileID: 11400000, guid: 97f1fbab248a2e54e8f65c04f7ab2ed8, type: 2}
   - {fileID: 11400000, guid: b984471b3b89d084f86c93865b682947, type: 2}

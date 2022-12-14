@@ -67,7 +67,8 @@ namespace Player
             rb.velocity = movement;
 
             //Super important. This will make the player face in the direction of the inputs. It also normalizes them so you can go diagonally.
-            transform.up = rb.velocity.normalized;
+            if (horizontalMovement != 0 || verticallMovement != 0)
+                transform.up = rb.velocity.normalized;
         }
 
         private void OnCollisionEnter2D(Collision2D collision)

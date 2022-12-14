@@ -37,14 +37,15 @@ namespace Assets.Scripts.Player
         /// <param name="shots">How many bullets are fired off at once</param>
         public void Fire(int shots)
         {
-            gun.shotsFired++;
-            part.Emit(shots);
-
             var partShape = part.shape;
             partShape.angle = (100 - gun.accuracy); 
 
             var partM = part.main;
             partM.startSpeed = speed;
+            //partM.startSpeedMultiplier //TODO: Something with this?
+
+            gun.shotsFired++;
+            part.Emit(shots);
         }
 
 
