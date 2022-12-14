@@ -5081,6 +5081,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1634937852271311181}
   - component: {fileID: 1634937852271311168}
+  - component: {fileID: -2679496882853930165}
   - component: {fileID: 1634937852271311183}
   - component: {fileID: 1634937852271311170}
   - component: {fileID: 1634937852271311171}
@@ -5126,6 +5127,20 @@ MonoBehaviour:
   destination: {x: 17, y: 2}
   speed: 1
   acceleration: 0.6
+--- !u!114 &-2679496882853930165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634937852271311182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c788717c6d1cdb45947be96f4f13704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  points: 5
 --- !u!61 &1634937852271311183
 BoxCollider2D:
   m_ObjectHideFlags: 0

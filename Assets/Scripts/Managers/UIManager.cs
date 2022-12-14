@@ -16,6 +16,9 @@ namespace Assets.Scripts.Managers
         [SerializeField]
         GameObject gameOver;
 
+        [SerializeField]
+        GameObject score;
+
         List<GameObject> healthBlips = new List<GameObject>();
 
         public void SetHealth(int newHealth)
@@ -43,6 +46,11 @@ namespace Assets.Scripts.Managers
             }
         }
 
+        internal void SetScore(int newScore)
+        {
+            score.GetComponent<TextMeshProUGUI>().text = $"Score: {newScore}";
+        }
+
         public void ShowGameOverUI()
         {
             gameOver.SetActive(true);
@@ -50,6 +58,8 @@ namespace Assets.Scripts.Managers
 
         public void HideGameOverUI()
         {
+            //TODO: Reset the gameover objects position so it can always be on?
+            //gameOver.GetComponent<RectTransform>().position = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, 0));
             gameOver.SetActive(false);
         }
 
@@ -64,6 +74,11 @@ namespace Assets.Scripts.Managers
                 gameOver = GameObject.Find("Game Over");
             else
                 Debug.LogError("Could not find a 'Game Over' game object.");
+
+            if (score == null)
+                score = GameObject.Find("Score");
+            else
+                Debug.LogError("Could not find a 'Score' game object.");
         }
 
         private void Awake()
@@ -77,6 +92,8 @@ namespace Assets.Scripts.Managers
             {
                 Destroy(gameObject);
             }
+
+            HideGameOverUI();
         }
 
         private void Start()

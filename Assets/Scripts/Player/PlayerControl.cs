@@ -65,6 +65,9 @@ namespace Player
 
             movement *= Time.deltaTime * 100; //This makes movement smoother
             rb.velocity = movement;
+
+            //Super important. This will make the player face in the direction of the inputs. It also normalizes them so you can go diagonally.
+            transform.up = rb.velocity.normalized;
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
@@ -73,7 +76,6 @@ namespace Player
             {
                 Destroy(collision.gameObject.gameObject);
                 DamagePlayer();
-                Debug.Log($"PlayerHealth: {health}");
             }
         }
 

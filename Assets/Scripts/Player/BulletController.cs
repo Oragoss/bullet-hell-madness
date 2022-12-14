@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Enemy;
+using Assets.Scripts.Managers;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -50,7 +52,8 @@ namespace Assets.Scripts.Player
         {
             if (other.CompareTag("Enemy"))
             {
-                Debug.Log("Hit: " + other.gameObject);
+                var enemy = other.gameObject.GetComponent<EnemyStats>();
+                GameManager.gameManager.AddToScore(enemy.points);
                 Destroy(other.gameObject);
             }
         }

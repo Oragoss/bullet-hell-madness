@@ -13,6 +13,9 @@ namespace Assets.Scripts.Managers
         GameObject AIManager;
 
         [SerializeField]
+        int playerScore = 0;
+
+        [SerializeField]
         GameObject Player;
 
         [SerializeField]
@@ -30,14 +33,22 @@ namespace Assets.Scripts.Managers
 
         public void Restart()
         {
+            playerScore = 0;
             UIManager.uiManager.HideGameOverUI();
             Player.GetComponent<PlayerControl>().SetPlayerHealth(playerHealth);
             UIManager.uiManager.SetHealth(playerHealth);
+            UIManager.uiManager.SetScore(0);
             Player.GetComponent<PlayerControl>().HideCursor();
             Player.transform.position = playerStartPosition;
             Player.transform.eulerAngles = new Vector3(0, 0, 0);
 
             AIManager.gameObject.GetComponent<SpawnManager>().StartSpawnWaves();
+        }
+
+        public void AddToScore(int points)
+        {
+            playerScore += points;
+            UIManager.uiManager.SetScore(playerScore);
         }
 
         private void Reset()
