@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Assets.Scripts.Enemy;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.Enemy
+namespace Assets.Scripts.Managers
 {
     public class SpawnManager : MonoBehaviour
     {
