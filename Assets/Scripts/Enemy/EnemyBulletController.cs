@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using Player;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -45,13 +45,11 @@ namespace Assets.Scripts.Enemy
             partM.startSpeed = speed;
         }
 
-
         private void OnParticleCollision(GameObject other)
         {
             if (other.CompareTag("Player"))
             {
-                Debug.Log("Hit: " + other.gameObject);
-                //TODO: Damage player?
+                other.gameObject.GetComponent<PlayerControl>().DamagePlayer();
             }
         }
     }

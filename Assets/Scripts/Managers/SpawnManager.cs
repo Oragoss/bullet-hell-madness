@@ -9,10 +9,23 @@ namespace Assets.Scripts.Managers
     {
         public static SpawnManager spawnManager;
 
+        public float spawnWaveDelay = 0;
+        public float waveRepeatRate = 2.5f;
+
         [SerializeField]
         List<EnemyWave> wave = new List<EnemyWave>();
 
-        void Awake()
+        public void StopSpawnWaves()
+        {
+            CancelInvoke("SpawnWaves");
+        }
+
+        public void StartSpawnWaves()
+        {
+            InvokeRepeating("SpawnWaves", spawnWaveDelay, waveRepeatRate);
+        }
+
+        private void Awake()
         {
             if (spawnManager == null)
             {
@@ -28,7 +41,7 @@ namespace Assets.Scripts.Managers
 
         private void Start()
         {
-            InvokeRepeating("SpawnWaves", 0, 2.5f);
+            StartSpawnWaves();
         }
 
         private void SpawnWaves()

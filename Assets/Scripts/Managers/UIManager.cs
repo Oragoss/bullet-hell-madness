@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace Assets.Scripts.Managers
@@ -11,6 +12,9 @@ namespace Assets.Scripts.Managers
         [Tooltip("This parent object holds all of the health blips. The images that count as the player's health (think hearts from Legend of Zelda).")]
         [SerializeField]
         GameObject Health;
+
+        [SerializeField]
+        GameObject gameOver;
 
         List<GameObject> healthBlips = new List<GameObject>();
 
@@ -32,8 +36,21 @@ namespace Assets.Scripts.Managers
         public void DecreaseHealth()
         {
             int lastIndex = healthBlips.Count - 1;
-            healthBlips[lastIndex].SetActive(false);
-            healthBlips.Remove(healthBlips[lastIndex]);
+            if (lastIndex > -1)
+            {
+                healthBlips[lastIndex].SetActive(false);
+                healthBlips.Remove(healthBlips[lastIndex]);
+            }
+        }
+
+        public void ShowGameOverUI()
+        {
+            gameOver.SetActive(true);
+        }
+
+        public void HideGameOverUI()
+        {
+            gameOver.SetActive(false);
         }
 
         private void Reset()
@@ -42,6 +59,11 @@ namespace Assets.Scripts.Managers
                 Health = GameObject.Find("Health");
             else
                 Debug.LogError("Could not find a 'Health' game object.");
+
+            if (gameOver == null)
+                gameOver = GameObject.Find("Game Over");
+            else
+                Debug.LogError("Could not find a 'Game Over' game object.");
         }
 
         private void Awake()
