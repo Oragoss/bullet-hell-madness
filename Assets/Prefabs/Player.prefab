@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shots: 1
-  fireRate: 8
+  fireRate: 4
   fireRateCounter: 0
   bulletController: {fileID: 166093764}
   shotsFired: 0
@@ -3877,7 +3877,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 55
+      m_Bits: 247
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -4966,7 +4966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shots: 1
-  fireRate: 8
+  fireRate: 4
   fireRateCounter: 0
   bulletController: {fileID: 232131266}
   shotsFired: 0
@@ -8781,7 +8781,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 55
+      m_Bits: 247
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -9859,7 +9859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ffe3ac3690094843bb0c7e2005773cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.5
+  speed: 4
 --- !u!114 &1810791953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9966,7 +9966,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1810791957
 BoxCollider2D:
   m_ObjectHideFlags: 0

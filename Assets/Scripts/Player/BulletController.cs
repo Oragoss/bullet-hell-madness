@@ -15,6 +15,13 @@ namespace Assets.Scripts.Player
         private ParticleSystem part;
         private List<ParticleCollisionEvent> collisionEvents = new List<ParticleCollisionEvent>();
 
+        private void Awake()
+        {
+            part = GetComponent<ParticleSystem>();
+            var partM = part.main;
+            partM.startSpeed = speed;
+        }
+
         private void Start()
         {
             part = GetComponent<ParticleSystem>();

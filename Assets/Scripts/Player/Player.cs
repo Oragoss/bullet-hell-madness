@@ -7,15 +7,16 @@ namespace Player
     public class Player : MonoBehaviour
     {
         [SerializeField]
-        float speed = 3.5f;
+        int health = 6;
+
+        [SerializeField]
+        float speed = 4f;
 
         Rigidbody2D rb;
-        BoxCollider2D boxCollider;
 
         private void Awake()
         {
             rb = gameObject.GetComponent<Rigidbody2D>();
-            boxCollider = gameObject.GetComponent<BoxCollider2D>();
             HideCursor();
         }
 
@@ -33,6 +34,16 @@ namespace Player
 
             movement *= Time.deltaTime * 100; //This makes movement smoother
             rb.velocity = movement;
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                health--;
+                Debug.Log($"PlayerHealth: {health}");
+                Destroy(collision.gameObject.gameObject);
+            }
         }
 
         private void HideCursor()

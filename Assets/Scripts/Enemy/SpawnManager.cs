@@ -11,7 +11,7 @@ namespace Assets.Scripts.Enemy
 
         private void Start()
         {
-            InvokeRepeating("SpawnWaves", 0, 5);
+            InvokeRepeating("SpawnWaves", 0, 2.5f);
         }
 
         private void SpawnWaves()

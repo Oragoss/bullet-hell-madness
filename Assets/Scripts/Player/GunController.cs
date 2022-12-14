@@ -6,13 +6,12 @@ namespace Assets.Scripts.Player
     public class GunController : MonoBehaviour
     {
         [SerializeField] int shots = 1;
-        [SerializeField] float fireRate;
-        [SerializeField] float fireRateCounter;
+        [SerializeField] float fireRate = 2.5f;
         [SerializeField] BulletController bulletController;
 
         public int shotsFired;
         public int accuracy = 100;
-        
+        float fireRateCounter;
 
         private void Start()
         {
@@ -31,7 +30,5 @@ namespace Assets.Scripts.Player
                 }
             }
         }
-
-
     }
 }

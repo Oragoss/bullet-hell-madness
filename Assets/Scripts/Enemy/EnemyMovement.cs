@@ -16,7 +16,9 @@ namespace Assets.Scripts.Enemy
         public Vector2 destination;
 
         [SerializeField]
-        float speed = 3.5f;
+        float speed = 1f;
+        [SerializeField]
+        float acceleration = 0.5f;
 
         Rigidbody2D rb;
 
@@ -24,6 +26,8 @@ namespace Assets.Scripts.Enemy
         private void Awake()
         {
             rb = gameObject.GetComponent<Rigidbody2D>();
+            speed = speed / 10;
+            acceleration = acceleration / 10;
         }
 
         private void FixedUpdate()
@@ -33,6 +37,7 @@ namespace Assets.Scripts.Enemy
 
         private void Movement()
         {
+            speed += acceleration;
             transform.eulerAngles = new Vector3(0, 0, lookDirection);
             rb.position = Vector2.MoveTowards(transform.position, new Vector2(destination.x, destination.y), speed * Time.deltaTime);
         }
