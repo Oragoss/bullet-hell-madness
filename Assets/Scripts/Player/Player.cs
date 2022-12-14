@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Assets.Scripts.Managers;
 using UnityEngine;
 
 namespace Player
@@ -7,7 +6,7 @@ namespace Player
     public class Player : MonoBehaviour
     {
         [SerializeField]
-        int health = 6;
+        int health = 5;
 
         [SerializeField]
         float speed = 4f;
@@ -40,10 +39,16 @@ namespace Player
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {
-                health--;
-                Debug.Log($"PlayerHealth: {health}");
                 Destroy(collision.gameObject.gameObject);
+                DamagePlayer();
+                Debug.Log($"PlayerHealth: {health}");
             }
+        }
+
+        public void DamagePlayer()
+        {
+            health--;
+            UIManager.uiManager.DecreaseHealth();
         }
 
         private void HideCursor()

@@ -7,8 +7,24 @@ namespace Assets.Scripts.Managers
 {
     public class SpawnManager : MonoBehaviour
     {
+        public static SpawnManager spawnManager;
+
         [SerializeField]
         List<EnemyWave> wave = new List<EnemyWave>();
+
+        void Awake()
+        {
+            if (spawnManager == null)
+            {
+                DontDestroyOnLoad(gameObject);
+                spawnManager = this;
+            }
+            else if (spawnManager != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+
 
         private void Start()
         {

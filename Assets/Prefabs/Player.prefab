@@ -62,8 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shots: 1
-  fireRate: 4
-  fireRateCounter: 0
+  fireRate: 2.5
   bulletController: {fileID: 166093764}
   shotsFired: 0
   accuracy: 100
@@ -4966,8 +4965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shots: 1
-  fireRate: 4
-  fireRateCounter: 0
+  fireRate: 2.5
   bulletController: {fileID: 232131266}
   shotsFired: 0
   accuracy: 100
@@ -9859,6 +9857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ffe3ac3690094843bb0c7e2005773cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 5
   speed: 4
 --- !u!114 &1810791953
 MonoBehaviour:
