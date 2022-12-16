@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: EnemyBehavior_4
   m_EditorClassIdentifier: 
   enemy: {fileID: 1634937852271311182, guid: d7c4d3bfedd875e4385d9236093a6287, type: 3}
-  spawnPoint: {x: -15, y: -1}
+  spawnPoint: {x: -17, y: -1}
   destination: {x: 20, y: -1}
   lookDirection: 270

@@ -42,7 +42,6 @@ namespace Assets.Scripts.Player
 
             var partM = part.main;
             partM.startSpeed = speed;
-            //partM.startSpeedMultiplier //TODO: Something with this?
 
             gun.shotsFired++;
             part.Emit(shots);
@@ -55,7 +54,18 @@ namespace Assets.Scripts.Player
             {
                 var enemy = other.gameObject.GetComponent<EnemyStats>();
                 GameManager.gameManager.AddToScore(enemy.points);
-                Destroy(other.gameObject);
+
+                //TODO: Turn enemy renderer off
+                int childCount = other.gameObject.transform.childCount;
+                for(int i = 0; i < childCount; i++)
+                {
+                    if (other.gameObject.transform.GetChild(i).transform.GetComponent<SpriteRenderer>())
+                        other.gameObject.transform.GetChild(i).transform.GetComponent<SpriteRenderer>().enabled = false;
+                    else if (other.gameObject.transform.GetChild(i).transform.GetComponent<EnemyGunController>())
+                        other.gameObject.transform.GetChild(i).transform.GetComponent<EnemyGunController>().StopFireSequence();
+                }
+
+                other.gameObject.tag = "DeadEnemy";
             }
         }
     }

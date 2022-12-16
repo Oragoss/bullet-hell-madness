@@ -27,7 +27,8 @@ namespace Player
         public void HideCursor()
         {
             Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.Confined;
+
         }
 
         public void ShowCursor()
@@ -67,8 +68,11 @@ namespace Player
             rb.velocity = movement;
 
             //Super important. This will make the player face in the direction of the inputs. It also normalizes them so you can go diagonally.
-            if (horizontalMovement != 0 || verticallMovement != 0)
-                transform.up = rb.velocity.normalized;
+            //if (horizontalMovement != 0 || verticallMovement != 0)
+            //    transform.up = rb.velocity.normalized;
+
+            Vector3 dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
+            transform.up = dir;
         }
 
         private void OnCollisionEnter2D(Collision2D collision)

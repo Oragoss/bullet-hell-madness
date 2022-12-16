@@ -5125,8 +5125,8 @@ MonoBehaviour:
   lookDirection: 270
   spawnLocation: {x: -13, y: 2}
   destination: {x: 17, y: 2}
-  speed: 1
-  acceleration: 0.6
+  speed: 0.5
+  acceleration: 0.3
 --- !u!114 &-2679496882853930165
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -875,7 +875,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score:'
+  m_text: 'Score: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2172,102 +2172,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 166093761, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: m_Flip.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 166093761, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: m_Flip.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 166093761, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: m_Flip.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 166093761, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 166093761, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 166093761, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: m_Pivot.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 166093761, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 166093761, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: m_RenderAlignment
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 166093761, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 704fffe5e3fd90e4a8bf705c1882c918, type: 2}
-    - target: {fileID: 166093762, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: InitialModule.rotation3D
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 166093762, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: InitialModule.startRotation.scalar
-      value: 4.712389
-      objectReference: {fileID: 0}
-    - target: {fileID: 166093762, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: InitialModule.startRotationX.scalar
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 166093762, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: InitialModule.startRotationY.scalar
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 166093764, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: speed
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 232131263, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-    - target: {fileID: 232131263, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 232131263, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 232131263, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: m_RenderAlignment
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 232131263, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 704fffe5e3fd90e4a8bf705c1882c918, type: 2}
-    - target: {fileID: 232131264, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: InitialModule.rotation3D
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 232131264, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: InitialModule.startRotation.scalar
-      value: 4.712389
-      objectReference: {fileID: 0}
-    - target: {fileID: 232131266, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: speed
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1810791952, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1810791956, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 187690708549865452, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2275,18 +2179,6 @@ PrefabInstance:
     - target: {fileID: 187690708549865454, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 187690708549865454, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 187690708549865454, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 187690708549865454, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 187690708549865454, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2327,10 +2219,6 @@ PrefabInstance:
     - target: {fileID: 187690708549865454, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 187690708549865454, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
@@ -2486,10 +2374,6 @@ PrefabInstance:
     - target: {fileID: 5857207349360106082, guid: 7b0c43d05fbe55647a26f0005a9ff22f, type: 3}
       propertyPath: m_Name
       value: AI Manager
-      objectReference: {fileID: 0}
-    - target: {fileID: 5857207349360106082, guid: 7b0c43d05fbe55647a26f0005a9ff22f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5857207349360106093, guid: 7b0c43d05fbe55647a26f0005a9ff22f, type: 3}
       propertyPath: m_RootOrder

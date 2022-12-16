@@ -13,6 +13,10 @@ namespace Assets.Scripts.Enemy
 
         public int accuracy = 100;
 
+        public void StopFireSequence()
+        {
+            CancelInvoke("FireSequence");
+        }
 
         private void Start()
         {

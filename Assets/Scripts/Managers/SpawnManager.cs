@@ -15,6 +15,13 @@ namespace Assets.Scripts.Managers
         [SerializeField]
         List<EnemyWave> wave = new List<EnemyWave>();
 
+        [Header("Testing Variables")]
+        [SerializeField, Tooltip("Turns on the Spawn Manager's test mode which will allow you to test specific features. Make sure this is turned off for production.")]
+        bool testMode;
+
+        [SerializeField]
+        int waveToTest;
+
         public void StopSpawnWaves()
         {
             CancelInvoke("SpawnWaves");
@@ -47,7 +54,15 @@ namespace Assets.Scripts.Managers
         private void SpawnWaves()
         {
             var random = new System.Random(Mathf.Abs(Guid.NewGuid().GetHashCode()));
-            int next = random.Next(0, wave.Count);
+            int next = 0;
+
+            if (testMode)
+            {
+                next = waveToTest;
+            }
+            else
+                next = random.Next(0, wave.Count);
+
             var currentWave = wave[next];
 
             for (var y = 0; y < currentWave.enemyBehavior.Count; y++)
