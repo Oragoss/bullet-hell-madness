@@ -23,7 +23,7 @@ namespace Assets.Scripts.Managers
 
         [SerializeField]
         Vector2 playerStartPosition;
-
+                
         public void GameOver()
         {
             UIManager.uiManager.ShowGameOverUI();

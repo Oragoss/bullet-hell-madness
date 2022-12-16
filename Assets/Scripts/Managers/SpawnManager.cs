@@ -45,7 +45,6 @@ namespace Assets.Scripts.Managers
             }
         }
 
-
         private void Start()
         {
             StartSpawnWaves();
