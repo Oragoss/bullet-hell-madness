@@ -15,7 +15,12 @@ namespace Assets.Scripts.Player
         public GunController gun;
 
         private ParticleSystem part;
-        private List<ParticleCollisionEvent> collisionEvents = new List<ParticleCollisionEvent>();
+        
+        [Header("Layers colliders should ignore.")]
+        [SerializeField]
+        int playerWeaponLayer = 8;
+        [SerializeField]
+        int deadEnemyLayer = 9;
 
         private void Awake()
         {
@@ -29,6 +34,8 @@ namespace Assets.Scripts.Player
             part = GetComponent<ParticleSystem>();
             var partShape = part.shape;
             partShape.scale = new Vector3(0.1f, 1, 1);
+
+            Physics.IgnoreLayerCollision(playerWeaponLayer, deadEnemyLayer);
         }
 
         /// <summary>
@@ -55,7 +62,6 @@ namespace Assets.Scripts.Player
                 var enemy = other.gameObject.GetComponent<EnemyStats>();
                 GameManager.gameManager.AddToScore(enemy.points);
 
-                //TODO: Turn enemy renderer off
                 int childCount = other.gameObject.transform.childCount;
                 for(int i = 0; i < childCount; i++)
                 {
@@ -66,6 +72,7 @@ namespace Assets.Scripts.Player
                 }
 
                 other.gameObject.tag = "DeadEnemy";
+                other.gameObject.layer = 9; //Layer 9 is DeadEnemy
             }
         }
     }

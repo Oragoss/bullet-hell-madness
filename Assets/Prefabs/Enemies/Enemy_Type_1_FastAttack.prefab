@@ -5021,7 +5021,6 @@ GameObject:
   - component: {fileID: -2679496882853930165}
   - component: {fileID: 1634937852271311183}
   - component: {fileID: 1634937852271311170}
-  - component: {fileID: 1634937852271311171}
   m_Layer: 6
   m_Name: Enemy_Type_1_FastAttack
   m_TagString: Enemy
@@ -5063,6 +5062,8 @@ MonoBehaviour:
   destination: {x: 17, y: 2}
   speed: 0.4
   acceleration: 0.3
+  enemyLayer: 6
+  deadEnemyLayer: 9
 --- !u!114 &-2679496882853930165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5129,24 +5130,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 1}
   m_EdgeRadius: 0
---- !u!50 &1634937852271311171
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1634937852271311182}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 100
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0

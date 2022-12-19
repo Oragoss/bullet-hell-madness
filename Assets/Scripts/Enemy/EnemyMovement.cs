@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enemy
 {
-    [RequireComponent(typeof(Rigidbody2D))]
+    //[RequireComponent(typeof(Rigidbody2D))]
     public class EnemyMovement : MonoBehaviour
     {
         [HideInInspector]
@@ -20,14 +20,18 @@ namespace Assets.Scripts.Enemy
         [SerializeField]
         float acceleration = 0.5f;
 
-        Rigidbody2D rb;
-
+        [Header("Layers colliders should ignore.")]
+        [SerializeField]
+        int enemyLayer = 6;
+        [SerializeField]
+        int deadEnemyLayer = 9;
 
         private void Awake()
         {
-            rb = gameObject.GetComponent<Rigidbody2D>();
             speed = speed / 10;
             acceleration = acceleration / 10;
+
+            Physics.IgnoreLayerCollision(enemyLayer, deadEnemyLayer);   //doesn't seem to be working
         }
 
         private void FixedUpdate()
@@ -39,7 +43,7 @@ namespace Assets.Scripts.Enemy
         {
             speed += acceleration;
             transform.eulerAngles = new Vector3(0, 0, lookDirection);
-            rb.position = Vector2.MoveTowards(transform.position, new Vector2(destination.x, destination.y), speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(destination.x, destination.y), speed * Time.deltaTime);
         }
     }
 }

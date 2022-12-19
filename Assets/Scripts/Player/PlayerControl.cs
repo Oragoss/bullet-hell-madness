@@ -1,3 +1,4 @@
+using Assets.Scripts.Enemy;
 using Assets.Scripts.Managers;
 using UnityEngine;
 
@@ -12,6 +13,12 @@ namespace Player
         float speed = 4f;
 
         Rigidbody2D rb;
+
+        [Header("Layers colliders should ignore.")]
+        [SerializeField]
+        int player = 3;
+        [SerializeField]
+        int deadEnemyLayer = 9;
 
         public void SetPlayerHealth(int newHealth)
         {
@@ -41,6 +48,8 @@ namespace Player
         {
             rb = gameObject.GetComponent<Rigidbody2D>();
             HideCursor();
+
+            Physics.IgnoreLayerCollision(player, deadEnemyLayer);   //Doesn't seem to be working
         }
 
         private void FixedUpdate()
@@ -79,7 +88,20 @@ namespace Player
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {
-                Destroy(collision.gameObject.gameObject);
+                var enemy = collision.gameObject.GetComponent<EnemyStats>();
+                GameManager.gameManager.AddToScore(enemy.points);
+
+                int childCount = collision.gameObject.transform.childCount;
+                for(int i = 0; i < childCount; i++)
+                {
+                    if (collision.gameObject.transform.GetChild(i).transform.GetComponent<SpriteRenderer>())
+                        collision.gameObject.transform.GetChild(i).transform.GetComponent<SpriteRenderer>().enabled = false;
+                    else if (collision.gameObject.transform.GetChild(i).transform.GetComponent<EnemyGunController>())
+                        collision.gameObject.transform.GetChild(i).transform.GetComponent<EnemyGunController>().StopFireSequence();
+                }
+
+                collision.gameObject.tag = "DeadEnemy";
+                collision.gameObject.layer = 9; //Layer 9 is DeadEnemy
                 DamagePlayer();
             }
         }
