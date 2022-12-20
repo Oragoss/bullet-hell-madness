@@ -5022,7 +5022,7 @@ GameObject:
   - component: {fileID: 1634937852271311183}
   - component: {fileID: 1634937852271311170}
   m_Layer: 6
-  m_Name: Enemy_Type_2_FastAttack
+  m_Name: Enemy_Normal_2_FastAttack
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

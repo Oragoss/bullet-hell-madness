@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Enemy
@@ -24,5 +25,12 @@ namespace Assets.Scripts.Enemy
 
         [Tooltip("Which direction do you want this enemy facing?")]
         public Direction lookDirection = Direction.Up;
+
+        [Header("Special Enemy Behaviors")]
+        [Tooltip("Places this special enemy will stop before continuing on its destination.")]
+        public List<Vector2> stopPoints = new List<Vector2>();
+        [Tooltip("How long the special enemy will spend at each stop before moving on.")]
+        public int timeSpentAtStopPoints;
+        public int numberOfAttacks;
     }
 }

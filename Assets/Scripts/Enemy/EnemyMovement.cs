@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enemy
 {
-    //[RequireComponent(typeof(Rigidbody2D))]
     public class EnemyMovement : MonoBehaviour
     {
         [HideInInspector]
@@ -16,9 +15,9 @@ namespace Assets.Scripts.Enemy
         public Vector2 destination;
 
         [SerializeField]
-        float speed = 1f;
+        float speed = 0.4f;
         [SerializeField]
-        float acceleration = 0.5f;
+        float acceleration = 0.3f;
 
         [Header("Layers colliders should ignore.")]
         [SerializeField]
