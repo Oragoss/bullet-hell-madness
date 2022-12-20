@@ -18,6 +18,8 @@ namespace Assets.Scripts.Enemy
         [HideInInspector]
         public int timeSpentAtStopPoints = 10;
 
+        public bool stopAttacking;
+
         [SerializeField]
         List<SpecialEnemyAttack> weapons = new List<SpecialEnemyAttack>();
 
@@ -61,9 +63,19 @@ namespace Assets.Scripts.Enemy
             if (!isMoving)
             {
                 timer += Time.time;
-                for (int i = 0; i < weapons.Count; i++)
+                if (!stopAttacking)
                 {
-                    weapons[i].Fire();
+                    for (int i = 0; i < weapons.Count; i++)
+                    {
+                        weapons[i].Fire();
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < weapons.Count; i++)
+                    {
+                        weapons[i].StopFiring();
+                    }
                 }
             }
 

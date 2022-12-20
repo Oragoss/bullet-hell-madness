@@ -71,6 +71,9 @@ namespace Assets.Scripts.Player
                         other.gameObject.transform.GetChild(i).transform.GetComponent<EnemyGunController>().StopFireSequence();
                 }
 
+                if (other.gameObject.GetComponent<SpecialEnemyMovement>())
+                    other.gameObject.GetComponent<SpecialEnemyMovement>().stopAttacking = true;
+
                 other.gameObject.tag = "DeadEnemy";
                 other.gameObject.layer = 9; //Layer 9 is DeadEnemy
             }
