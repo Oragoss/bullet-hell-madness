@@ -7,12 +7,14 @@ namespace Assets.Scripts.Enemy
     {
         private ParticleSystem part;
 
-        private void Start()
+        private void Awake()
         {
             part = GetComponent<ParticleSystem>();
 
             var partM = part.main;
             partM.playOnAwake = false;
+
+            part.Pause();   //I have no idea why but if you don't do this you cannot start firing particles AT ALL
         }
 
         public void Fire()

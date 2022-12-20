@@ -2522,10 +2522,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AI Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 5857207349360106092, guid: 7b0c43d05fbe55647a26f0005a9ff22f, type: 3}
-      propertyPath: waveToTest
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5857207349360106093, guid: 7b0c43d05fbe55647a26f0005a9ff22f, type: 3}
       propertyPath: m_RootOrder
       value: 2

@@ -29,7 +29,6 @@ namespace Assets.Scripts.Enemy
         private float timer;
         private int currentStopPoint;
         private bool isMoving;
-        private float originalSpeed;
 
         [Header("Layers colliders should ignore.")]
         [SerializeField]
@@ -54,7 +53,6 @@ namespace Assets.Scripts.Enemy
             speed = speed / 10;
             acceleration = acceleration / 10;
             isMoving = true;
-            originalSpeed = speed;
             Physics.IgnoreLayerCollision(enemyLayer, deadEnemyLayer);   //doesn't seem to be working
         }
 
@@ -72,7 +70,6 @@ namespace Assets.Scripts.Enemy
             if (timer >= (timeSpentAtStopPoints * 1000) && currentStopPoint < stopPoints.Count)
             {
                 isMoving = true;
-                speed = originalSpeed;  //Reset speed after not moving
                 for (int i = 0; i < weapons.Count; i++)
                 {
                     weapons[i].StopFiring();
