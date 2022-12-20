@@ -2532,7 +2532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5857207349360106092, guid: 7b0c43d05fbe55647a26f0005a9ff22f, type: 3}
       propertyPath: objectTimerMaxRange
-      value: 10
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 5857207349360106092, guid: 7b0c43d05fbe55647a26f0005a9ff22f, type: 3}
       propertyPath: spawnObstacleWaveInsteadOfEnemyWave
