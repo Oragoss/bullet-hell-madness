@@ -9,10 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6320336179819717347}
-  - component: {fileID: 6320336179819717344}
-  - component: {fileID: 6320336179819717345}
   - component: {fileID: 6320336179819717349}
   - component: {fileID: 6320336179819717346}
+  - component: {fileID: 2784196256375595967}
+  - component: {fileID: 6320336179819717344}
+  - component: {fileID: 6320336179819717345}
   m_Layer: 6
   m_Name: Satellite
   m_TagString: Enemy
@@ -35,6 +36,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6320336179819717349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6320336179819717374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42acd7d57c6efbe42bd36ddad69a3cb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookDirection: 0
+  spawnLocation: {x: 0, y: 0}
+  destination: {x: 0, y: 0}
+  speed: 8
+  acceleration: 0
+  ignoreLookDirection: 1
+  enemyLayer: 6
+  deadEnemyLayer: 9
+--- !u!114 &6320336179819717346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6320336179819717374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c788717c6d1cdb45947be96f4f13704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  points: 5
+--- !u!114 &2784196256375595967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6320336179819717374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95af6866b9f260f46a58bbdae625579e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountToSlowDownSpin: 4
 --- !u!212 &6320336179819717344
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -113,36 +161,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.0001, y: 0.0001}
   m_EdgeRadius: 0
---- !u!114 &6320336179819717349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6320336179819717374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42acd7d57c6efbe42bd36ddad69a3cb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lookDirection: 0
-  spawnLocation: {x: 0, y: 0}
-  destination: {x: 0, y: 0}
-  speed: 1
-  acceleration: 0.5
-  enemyLayer: 6
-  deadEnemyLayer: 9
---- !u!114 &6320336179819717346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6320336179819717374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c788717c6d1cdb45947be96f4f13704, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
-  points: 5

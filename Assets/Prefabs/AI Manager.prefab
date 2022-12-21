@@ -63,7 +63,7 @@ MonoBehaviour:
   nextObjectSpawnTime: 0
   spawnObstacleWaveInsteadOfEnemyWave: 0
   objectTimerMinRange: 5
-  objectTimerMaxRange: 300
+  objectTimerMaxRange: 180
   specialWave:
   - {fileID: 11400000, guid: 3161824990e47304682a880b312d2c84, type: 2}
   - {fileID: 11400000, guid: ee578801a4371d04baa2414907329af8, type: 2}

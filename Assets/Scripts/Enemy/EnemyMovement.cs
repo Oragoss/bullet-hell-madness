@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts.Enemy
 {
@@ -18,6 +17,9 @@ namespace Assets.Scripts.Enemy
         float speed = 0.4f;
         [SerializeField]
         float acceleration = 0.3f;
+
+        [SerializeField]
+        bool ignoreLookDirection;
 
         [Header("Layers colliders should ignore.")]
         [SerializeField]
@@ -41,8 +43,10 @@ namespace Assets.Scripts.Enemy
         private void Movement()
         {
             speed += acceleration;
-            transform.eulerAngles = new Vector3(0, 0, lookDirection);
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(destination.x, destination.y), speed * Time.deltaTime);
+
+            if (!ignoreLookDirection)
+                transform.eulerAngles = new Vector3(0, 0, lookDirection);
         }
     }
 }

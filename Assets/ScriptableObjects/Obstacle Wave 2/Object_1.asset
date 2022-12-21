@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Object_1
   m_EditorClassIdentifier: 
   enemy: {fileID: 6320336179819717374, guid: 1c815a443263e1346a9ad78a968ecbf2, type: 3}
-  spawnPoint: {x: -16, y: 2}
-  destination: {x: 25, y: 2}
+  spawnPoint: {x: -4, y: 8}
+  destination: {x: -4, y: 25}
   lookDirection: 225
   stopPoints: []
   timeSpentAtStopPoints: 0
