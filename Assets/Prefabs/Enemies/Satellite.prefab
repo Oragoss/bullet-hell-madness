@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2784196256375595967}
   - component: {fileID: 6320336179819717344}
   - component: {fileID: 6320336179819717345}
+  - component: {fileID: -2724653538341333387}
   m_Layer: 6
   m_Name: Satellite
   m_TagString: Enemy
@@ -161,3 +162,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.0001, y: 0.0001}
   m_EdgeRadius: 0
+--- !u!114 &-2724653538341333387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6320336179819717374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d84becc51dcc534dbd1544690853774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayInSecondsBeforeDestory: 10

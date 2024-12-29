@@ -6,19 +6,14 @@ namespace Player
 {
     public class PlayerControl : MonoBehaviour
     {
-        [SerializeField]
-        int health = 5;
-
-        [SerializeField]
-        float speed = 4f;
-
-        Rigidbody2D rb;
+        [SerializeField] int health = 5;
+        [SerializeField] float speed = 4f;
 
         [Header("Layers colliders should ignore.")]
-        [SerializeField]
-        int player = 3;
-        [SerializeField]
-        int deadEnemyLayer = 9;
+        [SerializeField] int player = 3;
+        [SerializeField] int deadEnemyLayer = 9;
+
+        Rigidbody2D rb;
 
         public void SetPlayerHealth(int newHealth)
         {

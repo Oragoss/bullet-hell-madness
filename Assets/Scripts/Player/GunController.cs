@@ -12,11 +12,13 @@ namespace Assets.Scripts.Player
         public int shotsFired;
         public int accuracy = 100;
         float fireRateCounter;
+        AudioSource gunSound;
 
         private void Start()
         {
             if (!bulletController) bulletController = GetComponent<BulletController>();
             if (bulletController) bulletController.gun = this;
+            gunSound = GetComponent<AudioSource>();
         }
 
         private void Update()
@@ -27,6 +29,7 @@ namespace Assets.Scripts.Player
                 {
                     bulletController.Fire(shots);
                     fireRateCounter = Time.time + 1 / fireRate; //fireRate is how many bullets can be shot for every 1 second. Change the 1 to a 2 and it's the same number of shots in 2 seconds.
+                    gunSound.Play();
                 }
             }
         }
