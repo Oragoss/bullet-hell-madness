@@ -29,6 +29,12 @@ namespace Assets.Scripts.Managers
             UIManager.uiManager.ShowGameOverUI();
             AIManager.gameObject.GetComponent<SpawnManager>().StopSpawnWaves();
             Player.GetComponent<PlayerControl>().ShowCursor();
+
+            //TODO: What if we didn't do this but instead chose something to be the game over music??
+            //Then whenever the player dies something can be set active and play the music on awake. 
+            //Then when the game is reset we deactivate the game over music object...
+            //MusicManager.musicManager.TransitionToMainMenuMusic();
+            MusicManager.musicManager.PlayGameOverMusic();
         }
 
         public void Restart()

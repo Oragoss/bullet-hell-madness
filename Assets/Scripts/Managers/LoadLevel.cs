@@ -13,7 +13,7 @@ namespace Assets.Scripts.Managers
         {
             animator.SetTrigger("FadeOut");
             levelToLoad = levelIndex;
-            Invoke("OnFadeComplete", 0.95f);
+            Invoke("OnFadeComplete", 2f);
         }
 
         public void OnFadeComplete()
