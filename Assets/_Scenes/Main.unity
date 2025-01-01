@@ -866,10 +866,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1200, y: 1020}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -3005,24 +3005,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1706254272}
     - target: {fileID: 467744053196441072, guid: 5835e4b157694b94997648e941b9393f, type: 3}
-      propertyPath: playerUI
-      value: 
-      objectReference: {fileID: 989882622}
-    - target: {fileID: 467744053196441072, guid: 5835e4b157694b94997648e941b9393f, type: 3}
       propertyPath: AIManager
       value: 
       objectReference: {fileID: 1863029374}
-    - target: {fileID: 467744053196441072, guid: 5835e4b157694b94997648e941b9393f, type: 3}
-      propertyPath: mainMenuUI
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5207189038338018403, guid: 5835e4b157694b94997648e941b9393f, type: 3}
       propertyPath: m_Name
       value: Game Manager
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207189038338018403, guid: 5835e4b157694b94997648e941b9393f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5207189038338018412, guid: 5835e4b157694b94997648e941b9393f, type: 3}
       propertyPath: m_RootOrder
