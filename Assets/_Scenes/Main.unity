@@ -1546,18 +1546,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1632900970}
-        m_TargetAssemblyTypeName: Assets.Scripts.Managers.GameManager, Assembly-CSharp
-        m_MethodName: Restart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1309250399}
         m_TargetAssemblyTypeName: Assets.Scripts.Managers.MusicManager, Assembly-CSharp
         m_MethodName: StopGameOverMusic
@@ -2882,6 +2870,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1810791952, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
+      propertyPath: health
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 187690708549865452, guid: 8f777bce5feca9b4e8e6e203bef3da40, type: 3}
       propertyPath: m_Name
       value: Player

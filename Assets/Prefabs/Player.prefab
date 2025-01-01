@@ -67,6 +67,7 @@ MonoBehaviour:
   shots: 1
   fireRate: 2.5
   bulletController: {fileID: 166093764}
+  playerControl: {fileID: 1810791952}
   shotsFired: 0
   accuracy: 100
 --- !u!198 &166093762
@@ -5069,6 +5070,7 @@ MonoBehaviour:
   shots: 1
   fireRate: 2.5
   bulletController: {fileID: 232131266}
+  playerControl: {fileID: 1810791952}
   shotsFired: 0
   accuracy: 100
 --- !u!198 &232131264

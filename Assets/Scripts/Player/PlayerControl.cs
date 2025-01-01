@@ -6,7 +6,7 @@ namespace Player
 {
     public class PlayerControl : MonoBehaviour
     {
-        [SerializeField] int health = 5;
+        public int health = 5;
         [SerializeField] float speed = 4f;
 
         [Header("Layers colliders should ignore.")]
