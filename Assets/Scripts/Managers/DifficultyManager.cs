@@ -16,11 +16,26 @@ namespace Assets.Scripts.Managers
             Hard = 2
         }
 
-        public Difficulty difficultyChosen;
+        public Difficulty difficultyChosen = 0;
 
         public void SelectDifficulty(int difficulty)
         {
+            SpawnManager.spawnManager.StopSpawnWaves();
             difficultyChosen = (Difficulty)difficulty;
+            SpawnManager.spawnManager.StartSpawnWaves();
+        }
+
+        private void Awake()
+        {
+            if (difficultyManager == null)
+            {
+                DontDestroyOnLoad(gameObject);
+                difficultyManager = this;
+            }
+            else if (difficultyManager != this)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5857207349360106093}
+  - component: {fileID: 440117228}
   - component: {fileID: 5857207349360106092}
   m_Layer: 0
   m_Name: AI Manager
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &440117228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5857207349360106082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4262f3e89af2b948839776a2f5fba4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficultyChosen: 0
 --- !u!114 &5857207349360106092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,6 +60,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnWaveDelay: 1.5
   waveRepeatRate: 2.5
+  easyDifficultyWaveModifier: 4
+  normalDifficultyWaveModifier: 2
+  hardDifficultyWaveModifier: 0
   wave:
   - {fileID: 11400000, guid: 97f1fbab248a2e54e8f65c04f7ab2ed8, type: 2}
   - {fileID: 11400000, guid: b984471b3b89d084f86c93865b682947, type: 2}

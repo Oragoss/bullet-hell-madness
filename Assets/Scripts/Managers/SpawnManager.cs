@@ -60,8 +60,6 @@ namespace Assets.Scripts.Managers
         [SerializeField]
         int waveToTest;
 
-        int difficultyLevel;
-
         public void StopSpawnWaves()
         {
             CancelInvoke("SpawnWaves");
@@ -69,6 +67,8 @@ namespace Assets.Scripts.Managers
 
         public void StartSpawnWaves()
         {
+            //Get difficulty setting
+            int difficultyLevel = (int)DifficultyManager.difficultyManager.difficultyChosen;
 
             switch (difficultyLevel)
             {
@@ -99,9 +99,6 @@ namespace Assets.Scripts.Managers
 
         private void Start()
         {
-            //Get difficulty setting
-            difficultyLevel = (int)DifficultyManager.difficultyManager.difficultyChosen;
-
             //TODO: Change the spawning when in the title screen vs the game
 
             StartSpawnWaves();
