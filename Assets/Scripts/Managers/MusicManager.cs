@@ -89,7 +89,8 @@ namespace Assets.Scripts.Managers
 
         public void StopGameOverMusic()
         {
-
+            CancelInvoke("ActivateGameOverObject");
+            gameOverSpeaker.SetActive(false);
         }
 
         //Do to the nature of how the Game Over Menu appears, it will constantly make calls. This way we only activate the object instead of adding an audio clip every second.
@@ -98,7 +99,7 @@ namespace Assets.Scripts.Managers
             gameOverSpeaker.SetActive(true);
         }
 
-        private void SelectMainMenuBackgroundMusic()
+        public void SelectMainMenuBackgroundMusic()
         {
             var random = new System.Random(Mathf.Abs(Guid.NewGuid().GetHashCode()));
             int selectedAudioClip = random.Next(0, mainMenuAudioClips.Count);

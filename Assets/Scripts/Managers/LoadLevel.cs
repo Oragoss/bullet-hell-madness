@@ -16,6 +16,13 @@ namespace Assets.Scripts.Managers
             Invoke("OnFadeComplete", 2f);
         }
 
+        public void FadeToLevelQuickly(int levelIndex)
+        {
+            animator.SetTrigger("FadeOut");
+            levelToLoad = levelIndex;
+            Invoke("OnFadeComplete", 0);
+        }
+
         public void OnFadeComplete()
         {
             SceneManager.LoadScene(levelToLoad);
