@@ -47,6 +47,14 @@ namespace Player
             Physics.IgnoreLayerCollision(player, deadEnemyLayer);   //Doesn't seem to be working
         }
 
+        private void Update()
+        {
+            if(Input.GetKey(KeyCode.Escape))
+            {
+                ShowCursor();
+            }
+        }
+
         private void FixedUpdate()
         {
             if(health > 0)

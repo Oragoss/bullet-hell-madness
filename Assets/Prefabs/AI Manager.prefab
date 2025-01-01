@@ -59,9 +59,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnWaveDelay: 1.5
-  waveRepeatRate: 2.5
+  waveRepeatRate: 1
   easyDifficultyWaveModifier: 4
-  normalDifficultyWaveModifier: 2
+  normalDifficultyWaveModifier: 1.5
   hardDifficultyWaveModifier: 0
   wave:
   - {fileID: 11400000, guid: 97f1fbab248a2e54e8f65c04f7ab2ed8, type: 2}
