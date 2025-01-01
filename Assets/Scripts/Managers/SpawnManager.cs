@@ -12,6 +12,12 @@ namespace Assets.Scripts.Managers
         [Header("Enemy Variables")]
         public float spawnWaveDelay = 0;
         public float waveRepeatRate = 2.5f;
+        [Tooltip("How long to delay before spawning the next wave when the game is on \"Easy\" difficulty."), SerializeField]
+        float easyDifficultyWaveModifier = 4;
+        [Tooltip("How long to delay before spawning the next wave when the game is on \"Normal\" difficulty."), SerializeField]
+        float normalDifficultyWaveModifier = 2;
+        [Tooltip("How long to delay before spawning the next wave when the game is on \"Hard\" difficulty."), SerializeField]
+        float hardDifficultyWaveModifier = 0;
 
         [Tooltip("Regular enemies to spawn."), SerializeField]
         private List<EnemyWave> wave = new List<EnemyWave>();
@@ -54,6 +60,8 @@ namespace Assets.Scripts.Managers
         [SerializeField]
         int waveToTest;
 
+        int difficultyLevel;
+
         public void StopSpawnWaves()
         {
             CancelInvoke("SpawnWaves");
@@ -61,7 +69,19 @@ namespace Assets.Scripts.Managers
 
         public void StartSpawnWaves()
         {
-            InvokeRepeating("SpawnWaves", spawnWaveDelay, waveRepeatRate);
+
+            switch (difficultyLevel)
+            {
+                case (int)DifficultyManager.Difficulty.Easy:
+                    InvokeRepeating("SpawnWaves", spawnWaveDelay + easyDifficultyWaveModifier, waveRepeatRate + easyDifficultyWaveModifier);
+                    break;
+                case (int)DifficultyManager.Difficulty.Normal:
+                    InvokeRepeating("SpawnWaves", spawnWaveDelay + normalDifficultyWaveModifier, waveRepeatRate + normalDifficultyWaveModifier);
+                    break;
+                case (int)DifficultyManager.Difficulty.Hard:
+                    InvokeRepeating("SpawnWaves", spawnWaveDelay + hardDifficultyWaveModifier, waveRepeatRate + hardDifficultyWaveModifier);
+                    break;
+            }
         }
 
         private void Awake()
@@ -79,6 +99,11 @@ namespace Assets.Scripts.Managers
 
         private void Start()
         {
+            //Get difficulty setting
+            difficultyLevel = (int)DifficultyManager.difficultyManager.difficultyChosen;
+
+            //TODO: Change the spawning when in the title screen vs the game
+
             StartSpawnWaves();
             var random = new System.Random(Mathf.Abs(Guid.NewGuid().GetHashCode()));
             nextSpecialSpawnTime = random.Next(specialEnemyTimerMinRange, specialEnemyTimerMaxRange);
